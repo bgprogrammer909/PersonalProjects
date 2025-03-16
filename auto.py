@@ -10,3 +10,9 @@ type=["Document","Image","Diagram"]
 for i in range(0,len(type)):
     if not os.path.exists(path + type[i]):
         os.makedirs(path+type[i])
+
+#now sorting it in respective file
+for file in os.listdir(path):
+    if "_python" in file and not os.path.exists(path +"Document/"+file):
+        shutil.move(path + file, path +"Document/"+file)
+    
