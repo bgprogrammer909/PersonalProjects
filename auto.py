@@ -13,6 +13,6 @@ for i in range(0,len(type)):
 
 #now sorting it in respective file
 for file in os.listdir(path):
-    if "_python" in file and not os.path.exists(path +"Document/"+file):
+    if (".doc" in file or ".pdf" in file) and not os.path.exists(path +"Document/"+file):
         shutil.move(path + file, path +"Document/"+file)
     
