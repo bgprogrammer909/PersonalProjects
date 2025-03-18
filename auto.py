@@ -13,6 +13,10 @@ for i in range(0,len(type)):
 
 #now sorting it in respective file
 for file in os.listdir(path):
+    #check extension in name of file and if path inside desired foolder exist
     if (".doc" in file or ".pdf" in file) and not os.path.exists(path +"Document/"+file):
+        #moves the file insde desired folder
         shutil.move(path + file, path +"Document/"+file)
-    
+
+    elif (".jpg" or ".png" or ".jpeg" in file) and not os.path.exist(path+"Image/"+file):
+        shutil.move(path+file, path+"Image/"+file) 
